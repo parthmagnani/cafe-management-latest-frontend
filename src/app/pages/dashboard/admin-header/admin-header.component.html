@@ -1,0 +1,47 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary px-4 align-items-center">
+
+    <div class="d-flex justify-content-between w-100">
+        <div class="d-flex align-items-center brand">
+            <div class="menu-icon pt-1" >
+                <mat-icon class="text-light me-1" (click)="closeSideNav()">menu</mat-icon>
+            </div>
+            <div>
+                <a class="navbar-brand" href="#">Loan Manager</a>
+            </div>
+        </div>
+        <div class="d-flex align-items-center user ">
+            <div class="me-1 text-light">
+                <mat-icon class="text-light">account_circle</mat-icon>
+            </div>
+            <div class="mt-2 nav-item dropdown">
+                <h5 class="fs-5 text-light dropdown-toggle nav-link" data-bs-toggle="dropdown">Parth Magnani</h5>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"></a>Setting</li>
+                    <li><a class="dropdown-item" href="#"></a>Sign Out</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+<div class=" bg-[#dc3545]">
+
+    <div class="flex justify-between px-4 py-4 items-center">
+        <div>
+            <h1 class="text-[#fff] font-['Poppins'] cursor-pointer">Cafe Management</h1>
+        </div>
+    
+        <div>
+            <button mat-button [matMenuTriggerFor]="menu" class="text-[#fff] text-[18px] flex items-center">
+                <mat-icon class="text-light mr-2 ">account_circle</mat-icon>
+                Setting
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>Logout</button>
+                
+            </mat-menu>
+        </div>
+    </div>
+    
+    
+</div>
