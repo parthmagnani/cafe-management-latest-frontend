@@ -13,7 +13,7 @@ import { LayoutModule } from './pages/layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 
-
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -33,7 +33,8 @@ import { SharedModule } from './shared/shared.module';
     LayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatCardModule
     
   ],
   providers: [],

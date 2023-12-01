@@ -1,1 +1,21 @@
-<p>category works!</p>
+<div class=" py-3 px-3">
+
+    <div class="flex justify-between">
+        <div>
+            <h2 class="text-[#000000]">Manage Category</h2>
+        </div>
+
+        <div>
+            <button mat-raised-button color="warn" (click)="addCategory()">Add Category</button>
+        </div>
+    </div>
+
+    <div class="mt-8 flex justify-end items-center ">
+        
+        <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600"  placeholder="search category" [(ngModel)]="searchCategory">
+        
+        
+    </div>
+
+
+</div>

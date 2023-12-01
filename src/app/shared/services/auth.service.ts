@@ -27,4 +27,21 @@ export class AuthService {
 
     );
   }
+
+  // details of dashboard
+
+  public dashboardDetails(){
+    return this._dataService.getDataWithHeader(
+      this._configuration.API_ENDPOINT + 'dashboard/details'
+
+    );
+  }
+
+  // category
+  addCategory(body: any){
+    return this._dataService.postDataWithHeader(
+      this._configuration.API_ENDPOINT + 'category/add', body
+
+    );
+  }
 }

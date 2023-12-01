@@ -1,0 +1,19 @@
+<div class="">
+
+    <div class="py-3 bg-[#dc3545] flex justify-center">
+        <p class="text-[#fff] mb-0 text-[20px] font-medium">Add Category</p>
+    </div>
+
+
+    <div class="mt-3 px-3">
+        <div class="flex flex-col">
+            <label class="font-['Montserrat'] mb-1">Add Category</label>
+            <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600"  placeholder="add category" [(ngModel)]="category">
+        </div> 
+    </div>
+
+    <div class="flex justify-center my-5">
+        <button mat-raised-button  (click)="close()" class="mr-3">Close</button>
+        <button mat-raised-button color="warn" (click)="addCategory()">Add</button>
+    </div>
+</div>

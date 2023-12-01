@@ -10,6 +10,8 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     DashboardRoutingModule,
     MatIconModule,
     MatMenuModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule,
+    MatSnackBarModule
   ]
 })
 export class DashboardModule { }
