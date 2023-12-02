@@ -13,7 +13,10 @@ export class AddCategoryComponent {
     @Inject(MAT_DIALOG_DATA) public defaultData: any,
     private dialogRef: MatDialogRef<AddCategoryComponent>,
   ){
-
+    console.log("This is default Data", this.defaultData)
+    if(this.defaultData){
+      this.category = this.defaultData.name
+    }
   }
 
   

@@ -1,4 +1,4 @@
-<div class=" py-3 px-3">
+<div class=" py-4 px-3">
 
     <div class="">
         <h2 class="text-[#000000]">Dashboard</h2>
@@ -9,8 +9,9 @@
             <mat-card class="min-h-[100px] flex justify-center " id="customCard1">
                 <mat-card-content>
                     <div class="text-center">
-                        <h3>Category</h3>
+                        <h3>Total Category:</h3>
                         <h5 class=" mt-2">{{this.dashboardDetails?.category}}</h5>
+                        <button mat-flat-button color="warn" class="mt-4" [routerLink]="'/category'">View Category</button>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -21,8 +22,9 @@
             <mat-card class="min-h-[100px] flex justify-center" id="customCard2">
                 <mat-card-content>
                     <div class="text-center">
-                        <h3>Product</h3>
+                        <h3>Total Product:</h3>
                         <h5 class=" mt-2">{{this.dashboardDetails?.product}}</h5>
+                        <button mat-flat-button color="warn" class="mt-4" [routerLink]="'/product'">View Product</button>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -33,8 +35,9 @@
             <mat-card class="min-h-[100px] flex justify-center">
                 <mat-card-content>
                     <div class="text-center">
-                        <h3>Bills</h3>
+                        <h3>Total Bills:</h3>
                         <h5 class=" mt-2">{{this.dashboardDetails?.bill}}</h5>
+                        <button mat-flat-button color="warn" class="mt-4" [routerLink]="'/bills'">View Bills</button>
                     </div>
                 </mat-card-content>
             </mat-card>

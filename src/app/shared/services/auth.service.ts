@@ -44,4 +44,41 @@ export class AuthService {
 
     );
   }
+
+  getCategory(){
+    return this._dataService.getDataWithHeader(
+      this._configuration.API_ENDPOINT + 'category/get'
+
+    );
+  }
+
+  deleteCategory(body: any){
+    return this._dataService.postDataWithHeader(
+      this._configuration.API_ENDPOINT + 'category/delete', body
+
+    );
+  }
+
+  editCategory(body: any){
+    return this._dataService.postDataWithHeader(
+      this._configuration.API_ENDPOINT + 'category/update', body
+
+    );
+  }
+
+
+  // Users
+  getusers(){
+    return this._dataService.getDataWithHeader(
+      this._configuration.API_ENDPOINT + 'user/get'
+
+    );
+  }
+
+  changeUserStatus(body: any){
+    return this._dataService.postDataWithHeader(
+      this._configuration.API_ENDPOINT + 'user/update', body
+
+    );
+  }
 }
