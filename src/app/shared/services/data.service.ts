@@ -37,7 +37,6 @@ export class DataService {
 
   public getDataWithHeader<T>(url: string) {
     const token: string | null = this.getToken();
-    console.log("THis is token", token)
     const httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',

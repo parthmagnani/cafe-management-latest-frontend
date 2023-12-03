@@ -1,1 +1,139 @@
-<p>orders works!</p>
+<div class=" py-4 px-3">
+
+    <div class="flex justify-between">
+        <div>
+            <h2 class="text-[#000000]">Manage Orders</h2>
+        </div>
+
+        <div class="addCommonButton">
+            <button mat-raised-button  (click)="saveSubmit()">Save & Submit</button>
+        </div>
+    </div>
+
+    <div class="" >
+
+        <form [formGroup]="this.customerForm">
+
+            <div class="mt-8">
+                <mat-card>
+                    <mat-card-content>
+                        <div>
+                            <p class="text-[#000000] font-medium text-[16px]">Customer Details:</p>
+                        </div>
+
+                        <div class="flex gap-3 items-center flex-wrap mt-4">
+
+                            <div class="flex flex-col w-[32%]">
+                                <label class="font-['Montserrat'] mb-1">Customer Name</label>
+                                <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Enter Customer Name" formControlName="name">
+                            </div> 
+    
+                            <div class="flex flex-col w-[32%]">
+                                <label class="font-['Montserrat'] mb-1">Email</label>
+                                <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Enter Customer Email" formControlName="email">
+                            </div> 
+    
+                            <div class="flex flex-col w-[32%]">
+                                <label class="font-['Montserrat'] mb-1">Contact number</label>
+                                <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Enter Contact Number" formControlName="contactNumber">
+                            </div> 
+    
+                            <div class="flex flex-col w-[32%]">
+                                <label class="font-['Montserrat'] mb-1">Payment Method</label>
+                                <mat-select  formControlName="paymentMethod" class="no-outline py-2 px-2 rounded border border-slate-600" >
+                                    <mat-option *ngFor="let payment of paymentOptions" [value]="payment">
+                                        {{payment}}
+                                    </mat-option>
+                                </mat-select>
+                            </div>
+
+                        </div>
+
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="mt-4">
+                <mat-card>
+                    <mat-card-content>
+                        <div>
+                            <p class="text-[#000000] font-medium text-[16px]">Product Details:</p>
+                        </div>
+
+                        <div class="mt-4" formArrayName="productDetails">
+                            <div *ngFor="let experience of addProduct.controls; let i = index" [formGroupName]="i">
+
+                                <div class="flex gap-3 items-center flex-wrap mb-3">
+
+                                    <div class="flex flex-col w-[32%]">
+                                        <label class="font-['Montserrat'] mb-1">Category</label>
+                                        <mat-select  formControlName="category" class="no-outline py-2 px-2 rounded border border-slate-600" (selectionChange)="onCategorySelection($event)">
+                                            <mat-option *ngFor="let category of this.categoryList" [value]="category.name" >
+                                                {{category.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+
+                                    <div class="flex flex-col w-[32%]">
+                                        <label class="font-['Montserrat'] mb-1">Product</label>
+                                        <mat-select  formControlName="name" class="no-outline py-2 px-2 rounded border border-slate-600" (selectionChange)="onProductSelection($event)">
+                                            <mat-option *ngFor="let product of this.productListByCategory" [value]="product.name" >
+                                                {{product.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+
+                                    <div class="flex flex-col w-[32%]">
+                                        <label class="font-['Montserrat'] mb-1">Price</label>
+                                        <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Price" formControlName="price" readonly>
+                                    </div> 
+
+                                    <div class="flex flex-col w-[32%]">
+                                        <label class="font-['Montserrat'] mb-1">Quantity</label>
+                                        <input type="number" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Quantity" formControlName="quantity">
+                                    </div> 
+
+                                    <div class="flex flex-col w-[32%]">
+                                        <label class="font-['Montserrat'] mb-1">Amount</label>
+                                        <input type="number" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="sub Total" formControlName="amount" readonly>
+                                    </div> 
+
+
+                                    <div class="w-[32%] flex flex-col">
+                                        <label class="font-['Montserrat'] mb-1 text-[#fff]">sdfsd</label>
+                                        <div class="flex items-center justify-end">
+                                            <button mat-stroked-button  class="mr-4" style="background-color: #dc3545 !important;color: #fff !important;" (click)="addNewProduct()" *ngIf="i == addProduct.length-1">Add More</button>
+                                            <button mat-stroked-button  [disabled]="this.disableDeleteButton" (click)="removeProduct(i)">Remove</button>
+                                            <!-- <mat-icon class="text-light mr-2 text-[#dc3545] cursor-pointer ">delete</mat-icon> -->
+                                        </div>
+                                    </div> 
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="my-4">
+                <mat-card>
+                    <mat-card-content>
+                        <div class="flex items-center justify-between py-2 px-3">
+                            <p class="text-[16px] text-[#1e1e1e] font-semibold">Total: </p>
+                            <p class="text-[16px] text-[#1e1e1e] font-semibold">{{this.customerForm.get('total')?.value}}</p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                
+            </div>
+            
+        </form>
+
+       
+    </div>
+
+    
+</div>

@@ -1,24 +1,16 @@
 <app-admin-header></app-admin-header>
 
-<main style="height: calc(100% - 64px) !important;">
-    <div class="flex h-[100%]" >
-        <div class=" h-[100%]" style="width:  20%;">
+<main style="height: calc(100% - 68px);"  class=" overflow-hidden">
+    <div class="flex  h-[100%]">
+        <div class="h-[100%]" style="width:  20%;">
             <app-side-nav></app-side-nav>
         </div>
 
-        <div  class=" h-[100%] bg-[#cba1a574]" style="width:  80%;">
+        <div  class="h-[100%] bg-[#cba1a574]" style="width:  80%; overflow-y: auto;">
             <router-outlet></router-outlet>
         </div>
     </div>
     
-
-    
-
-    
-    
-
-    
-    <!-- <div class="routing">
-      <router-outlet></router-outlet>
-    </div> -->
 </main>
+
+<!-- style="height: calc(100% - 68px) !important;" -->

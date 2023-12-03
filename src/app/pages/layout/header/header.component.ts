@@ -36,6 +36,9 @@ export class HeaderComponent {
             this.snackbar.open(response.message, 'Okay', {duration: 2000})
             localStorage.setItem('userToken', response.data);
             this.router.navigate(['/'])
+          }else{
+            console.log("You are in else condition")
+            this.snackbar.open(response.message, 'Okay', {duration: 2000})
           }
         })
       }
@@ -48,6 +51,15 @@ export class HeaderComponent {
     }).afterClosed().subscribe((res: any) => {
       if(res){
         console.log("This are credentials", res)
+        this.auth.signUp(res).subscribe((response: any) => {
+          console.log("This is resposne afdter signin", response)
+          if(response.status == 200){
+            this.snackbar.open(response.message, 'Okay')
+          }else if(response.status == 500){
+            console.log("You are in else condition")
+            this.snackbar.open(response.message, 'Okay', {duration: 2000})
+          }
+        })
         
       }
     })

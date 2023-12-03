@@ -1,0 +1,39 @@
+<div class="">
+    <div class="py-3 bg-[#dc3545] flex justify-center">
+        <p class="text-[#fff] mb-0 text-[20px] font-medium">{{this.defaultData.productDetails ? 'Edit' : 'Add'}} Product</p>
+    </div>
+
+    <div class="mt-3 px-3">
+        <form [formGroup]="this.addProductForm">
+
+            <div class="flex flex-col">
+                <label class="font-['Montserrat'] mb-1">Product name</label>
+                <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Enter Product Name" formControlName="name">
+            </div> 
+
+            <div class="flex flex-col mt-3">
+                <label class="font-['Montserrat'] mb-1">Category</label>
+                <mat-select  formControlName="categoryId" class="no-outline py-2 px-2 rounded border border-slate-600" >
+                    <mat-option *ngFor="let category of this.defaultData.categoryList" [value]="category.id">
+                      {{category.name}}
+                    </mat-option>
+                </mat-select>
+            </div>
+
+            <div class="flex flex-col mt-3">
+                <label class="font-['Montserrat'] mb-1">Description</label>
+                <textarea type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Description" formControlName="description"></textarea>
+            </div>
+
+            <div class="flex flex-col mt-3">
+                <label class="font-['Montserrat'] mb-1">Product Price</label>
+                <input type="text" class="no-outline py-2 px-2 rounded border border-slate-600" placeholder="Enter Price" formControlName="price">
+            </div>
+        </form>
+    </div>
+
+    <div class="flex justify-center my-5">
+        <button mat-raised-button  (click)="close()" class="mr-3">Close</button>
+        <button mat-raised-button  class="add" (click)="addProduct()">{{this.defaultData.productDetails ? 'Edit' : 'Add'}}</button>
+    </div>
+</div>
